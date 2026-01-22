@@ -34,7 +34,6 @@ public class EmprestimoService
             var emprestimo = new Emprestimo(dto.LivroId, dto.NomeSolicitante);
             await _emprestimos.AdicionarAsync(emprestimo);
 
-            // Um único SaveChanges no final já resolve, mas pode manter separado se quiser
             await _emprestimos.SalvarAlteracoesAsync();
 
             idGerado = emprestimo.Id;
